@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.heiye.dev</id>
     <title>黑夜的博客</title>
-    <updated>2019-07-23T13:31:17.438Z</updated>
+    <updated>2019-07-23T13:58:27.901Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.heiye.dev"/>
     <link rel="self" href="https://blog.heiye.dev/atom.xml"/>
@@ -260,6 +260,10 @@ git stash pop        // 恢复最近一次保存的临时修改
 </code></pre>
 <h2 id="0x07-写在最后">0x07 写在最后</h2>
 <p>这些是我目前在项目中经常会用到的操作，这里整理下来，可以作为一个手册。对于 Git 的理解或者更多的解释，并不在这里体现。大家可以参考其他更多的资料。例如<a href="https://www.moewah.com/go/aHR0cHM6Ly9naXRodWIuY29tLzUyMXh1ZXdlaWhhbi9naXQtdGlwcw==">《Git 的奇技淫巧》</a>&amp;<a href="https://www.moewah.com/go/aHR0cDovL3JvZ2VyZHVkbGVyLmdpdGh1Yi5pby9naXQtZ3VpZGUvaW5kZXguemguaHRtbA==">《Git 简明指南》</a>&amp;<a href="https://www.moewah.com/go/aHR0cHM6Ly90dXRvcmlhbHppbmUuY29tLzIwMTYvMDYvbGVhcm4tZ2l0LWluLTMwLW1pbnV0ZXNMZWFybiUyMEdpdCUyMGluJTIwMzAlMjBNaW51dGVz">《Learn Git in 30 Minutes》</a></p>
+<p>本文来之</p>
+<blockquote>
+<p>https://www.moewah.com/archives/2292.html</p>
+</blockquote>
 ]]></content>
     </entry>
     <entry>
