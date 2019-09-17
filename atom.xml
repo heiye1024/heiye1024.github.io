@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.heiye.dev</id>
     <title>黑夜的博客</title>
-    <updated>2019-08-17T15:41:14.576Z</updated>
+    <updated>2019-09-17T01:48:17.430Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.heiye.dev"/>
     <link rel="self" href="https://blog.heiye.dev/atom.xml"/>
@@ -27,8 +27,8 @@
 </ul>
 <h1 id="准备工作">准备工作</h1>
 <h2 id="安装-samba-和-avahi">安装 Samba 和 Avahi</h2>
-<pre><code>apt install smbd
-apt install avahi-daemon
+<pre><code>apt install samba
+apt install avahi-daemon  #（可选，用于支持网内的计算机自动发现）
 </code></pre>
 <h2 id="配置-samba">配置 Samba</h2>
 <p>首先，我们需要配置 Samba 提供文件共享服务，让 macOS 能够访问到备份数据路径。</p>
