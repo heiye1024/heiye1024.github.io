@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.heiye.dev</id>
     <title>黑夜的博客</title>
-    <updated>2019-09-17T01:48:17.430Z</updated>
+    <updated>2019-10-08T12:53:48.025Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.heiye.dev"/>
     <link rel="self" href="https://blog.heiye.dev/atom.xml"/>
@@ -10,6 +10,57 @@
     <logo>https://blog.heiye.dev/images/avatar.png</logo>
     <icon>https://blog.heiye.dev/favicon.ico</icon>
     <rights>All rights reserved 2019, 黑夜的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[Nestjs 入门（一）]]></title>
+        <id>https://blog.heiye.dev/post/nestjs-ru-men-yi</id>
+        <link href="https://blog.heiye.dev/post/nestjs-ru-men-yi">
+        </link>
+        <updated>2019-10-07T12:28:58.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://nestjs.com/">Nestjs</a> 是 Node 渐进式框架，底层默认使用 express（可以通过 Adapter 转换到 fastify），可以使用 express 或者 fastify 所有中间件，完美支持 TypeScript。熟悉 Spring 和 Angular 的同学可以很快上手 Nestjs，它大量借鉴了 Spring 和 Angular 中的设计思想。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://nestjs.com/">Nestjs</a> 是 Node 渐进式框架，底层默认使用 express（可以通过 Adapter 转换到 fastify），可以使用 express 或者 fastify 所有中间件，完美支持 TypeScript。熟悉 Spring 和 Angular 的同学可以很快上手 Nestjs，它大量借鉴了 Spring 和 Angular 中的设计思想。</p>
+<!-- more -->
+<h2 id="安装">安装</h2>
+<pre><code>yarn global add @nestjs/cli
+nest new project-name
+</code></pre>
+<h2 id="目录结构">目录结构</h2>
+<p>新建项目的目录结构如下：</p>
+<pre><code>├── README.md
+├── node_modules
+├── nodemon-debug.json
+├── nodemon.json
+├── package-lock.json
+├── package.json
+├── src
+├── test
+├── tsconfig.json
+├── tsconfig.spec.json
+├── tslint.json
+└── webpack.config.js
+</code></pre>
+<p>其中 src 是源码目录，该目录下有以下几个核心文件：</p>
+<pre><code>├── app.controller.ts # 根控制器
+├── app.module.ts # 应用程序根模块
+├── app.service.ts # 根服务
+└── main.ts # 应用程序入口文件
+</code></pre>
+<p>其中 main.ts 的代码如下，它负责引导我们的应用程序：</p>
+<pre><code>import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  await app.listen(3000);
+}
+bootstrap();
+</code></pre>
+<p>bootstrap 方法是一个异步函数，在该函数内部，通过调用 NestFactory.create 方法创建一个 Nest 应用实例，然后开始监听 3000 端口</p>
+<h2 id="运行">运行</h2>
+<pre><code>yarn run start:dev
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Linux 通过 Samba+Avahi 搭建 Time Machine 服务]]></title>
         <id>https://blog.heiye.dev/post/linux-tong-guo-sambaavahi-da-jian-time-machine-fu-wu</id>
@@ -86,15 +137,15 @@ fruit:time machine = yes    ; 重要！开启 Time Machine 支持
         <link href="https://blog.heiye.dev/post/git-chang-yong-ming-ling-ji-shi-yong-xiang-jie">
         </link>
         <updated>2019-07-23T12:51:03.000Z</updated>
-        <summary type="html"><![CDATA[<p><img src="https://blog.heiye.dev/post-images/1563886342707.jpg" alt=""></p>
+        <summary type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://blog.heiye.dev/post-images/1563886342707.jpg" alt=""></figure>
 <h1 id="0x00-写在前面">0x00 写在前面</h1>
 <p>现在大部分的开发团队都以 Git 作为自己的版本控制工具，需要对 Git 的使用非常的熟悉。这篇文章中本人整理了自己在开发过程中经常使用到的 Git 命令，方便在偶尔忘记时速查。使用 GUI 工具的同学，也可以对照起来看看。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p><img src="https://blog.heiye.dev/post-images/1563886342707.jpg" alt=""></p>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://blog.heiye.dev/post-images/1563886342707.jpg" alt=""></figure>
 <h1 id="0x00-写在前面">0x00 写在前面</h1>
 <p>现在大部分的开发团队都以 Git 作为自己的版本控制工具，需要对 Git 的使用非常的熟悉。这篇文章中本人整理了自己在开发过程中经常使用到的 Git 命令，方便在偶尔忘记时速查。使用 GUI 工具的同学，也可以对照起来看看。</p>
 <!-- more -->
-<p><img src="https://blog.heiye.dev/post-images/1563887383522.png" alt=""></p>
+<figure data-type="image" tabindex="2"><img src="https://blog.heiye.dev/post-images/1563887383522.png" alt=""></figure>
 <h1 id="0x01-git-配置">0x01 Git 配置</h1>
 <p>1.1 在安装完成 Git 后，开始正式使用前，是需要有一些全局设置的，如用户名、邮箱。<br>
 设置的主要命令是 <code>git config</code>:</p>
