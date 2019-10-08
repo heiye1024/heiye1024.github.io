@@ -1,372 +1,398 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    黑夜的博客
-</title>
-<link rel="shortcut icon" href="https://blog.heiye.dev/favicon.ico?v=1570539203379">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+<meta HTTP-EQUIV="expires" CONTENT="0"> 
+<title>黑夜的博客</title>	
+
 <link rel="stylesheet" href="https://blog.heiye.dev/styles/main.css">
-<!-- js -->
+<script type="text/javascript">
+function getCSS()
+{
+        datetoday = new Date();
+        timenow=datetoday.getTime();
+        datetoday.setTime(timenow);
+        thehour = datetoday.getHours();
+
+            display = "https://blog.heiye.dev/media/css/night.css";
+
+            display = "https://blog.heiye.dev/media/css/night.css";   
+      
+            display = "https://blog.heiye.dev/media/css/day.css";
+
+            display = "https://blog.heiye.dev/media/css/day.css";
+      
+
+var css = '<';
+        css+='link rel="stylesheet" href='+display+' \/';
+        css+='>';
+        document.write(css);
+}
+</script>
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Noto+Sans+SC:300|Montserrat&display=swap" rel="stylesheet">
+<link href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css" rel="stylesheet" />
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://blog.heiye.dev/media/js/jquery.sticky-sidebar.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<script type='text/javascript' src='https://blog.heiye.dev/media/scripts/script.js'></script>
+<link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+  <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
+  <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script>wow=new WOW({boxClass:'wow',animateClass:'animated',offset:0,mobile:true,live:true});wow.init();</script>
+
+<script type="text/javascript">
+window.onload=getCSS();
+</script>
 
 
 </head>
-
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://blog.heiye.dev">
-                <img class="avatar" src="https://blog.heiye.dev/images/avatar.png?v=1570539203379" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    黑夜的博客
-                </h1>
-            </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
-                    
-                            <li>
-                                <a href="/" class="menu">
-                                    首页
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/archives" class="menu">
-                                    归档
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/tags" class="menu">
-                                    标签
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
-
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
-</script>
-
-            <div id="main-content" class="post-container main-container">
-                <div id="content" class="main-container-left">
-                    
+<body class="home blog">
+    <div id="wrapper">
         
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.heiye.dev/post/nestjs-ru-men-yi">
-                        Nestjs 入门（一）
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-10-07</time>
-                    
-                        <a href="https://blog.heiye.dev/tag/GGd084OMe" class="post-tag i-tag
-                            i-tag-other_3">
-            #Nestjs
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                    <div class="post-content-abstract">
-                                        <p><a href="https://nestjs.com/">Nestjs</a> 是 Node 渐进式框架，底层默认使用 express（可以通过 Adapter 转换到 fastify），可以使用 express 或者 fastify 所有中间件，完美支持 TypeScript。熟悉 Spring 和 Angular 的同学可以很快上手 Nestjs，它大量借鉴了 Spring 和 Angular 中的设计思想。</p>
+		<header id="header" class="site-header" >
+			<div class="site-branding">
+									<h1 class="site-title"><a href="https://blog.heiye.dev" rel="home">黑夜的博客</a></h1>
+										
+					<h2 class="site-description">温故而知新</h2>
+										
+							</div>
+			<nav id="nav-wrapper">
+				<div class="container">
+					<div class="nav-toggle">
+						<div class="bars">
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<ul class="dove">
+		 
+     			
+<li>
+	 
+	<a  href="/"> 首页</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/archives"> 归档</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/tags"> 标签</a></li>
+	
+    
+     			
+<li>
+	 
+	<a  href="/post/about"> 关于</a></li>
+	
+    
 
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://blog.heiye.dev/post/nestjs-ru-men-yi">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.heiye.dev/post/linux-tong-guo-sambaavahi-da-jian-time-machine-fu-wu">
-                        Linux 通过 Samba+Avahi 搭建 Time Machine 服务
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-08-17</time>
-                    
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            Time Machine 是 macOS 自带的系统级备份软件，配置完成后就可以在后台每天自动备份整机数据，防止手滑、丢失、送修等各种场景。然而实际上，除非购买苹果全家桶的 Time Capsule，不然每次还得手动接上移动硬盘才会自动备份，实在毫无便利性了。下面介绍一种方法，通过 Samba 提供文件共享、 Avahi) 提供服务广播的方式，搭建通过网络进行备份的 Time Machine 备份服务器，实现和 Time Capsule 体验一致的无干预自动备份。
-插播一句：Samba 最初是基于 Microsoft 的 SMB 文件共享协议开发的开源实现，Avahi 则是以 Apple 开源的 Bonjour 源码上发展而来的 zeroconf 实现，说到底还是原本就有的协议了
-基础环境
+</ul>
+</li>		
+		
+</ul>				</div>
+			</nav>
 
-debian 10
-Samba 5
-Avahi 0.7+18+g1b5f401-2
-备份数据路径：/data/timemachine
-
-准备工作
-安装 Samba 和 Avahi
-apt install samba
-apt install avahi-daemon  #（可选，用于支持网内的计算机自动发现）
-
-配置 Samba
-首先，我们需要配置 Samba 提供文件共享服务，让 macOS 能够访问到备份数据路径。
-首先，需要添加一个 Time Machine 专用的用户。我这里使用了个人用户，反正都是个人数据。
-# useradd dazzy
+<div class="jingge">
 
 
-然后，设置该用户的 Samba 协议密码，这个密码跟 Linux 系统用户密码是相互独立的，需要单独设置。
-# smbpasswd -a dazzy
+    
 
+    
 
-接着，就是配置 Samba 让它把备份数据路径暴露出去，直接贴配置文件了。
-/etc/samba/smb.conf
-[global]
-server role = standalone server
-hosts allow = 10.42.0.
-log file = /var/log/samba/%m.log
-map to guest = Bad User
-unix extensions = no
-allow insecure wide links = yes
-follow symlinks = yes
-wide links = yes
+    
 
-[Warden TM]                 ; 服务名称，会显示在 Time Machine 备份界面
-path = /data/timemachine    ; 备份数据路径
-writable = yes              ; 允许SMB客户端写入
-valid users = dazzy         ; 允许访问的用户列表，避免备份数据泄漏
-; catia: 兼容linux/macos中合法但在Windows/SMB中非法的字符
-; fruit: 增强macos的的兼容性，并提供Netatalk AFP服务
-; streams_xattr: 通过Linux文件系统提供Windows NTFS属性字段
-vfs objects = catia fruit streams_xattr
-fruit:aapl = yes            ; 启用Apple SMB客户端兼容
-fruit:model = MacPro        ; 修改一下Finder里的图标
-fruit:time machine = yes    ; 重要！开启 Time Machine 支持
+    
 
-最后，就是把 Samba 服务起来啦，这里不要起错成 samba 了。
-# systemctl enable --now smbd
+    
 
+    
 
-这时候就可以通过 macOS Finder 里面的 Go &amp;gt; Connect to Server 验证一下 Samba 服务是否正常了。
-配置 Avahi
-Avahi 不需要配置。没错，直接启动就好了。
-# systemctl enable --now avahi-daemon
+    
 
+    
 
-使用 Time Machine
-到这里就可以使用了，在 Preferences &amp;gt; Time Machine &amp;gt; Select Disk 中就可以看到刚才配置的 Warden TM，点击就可以使用了。
-甚至用 VPN 连回家里之后，Time Machine 也会继续备份。
-本文来之 https://blog.dazzyd.org/providing-time-machine-on-linux/
+    
 
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.heiye.dev/post/linux-tong-guo-sambaavahi-da-jian-time-machine-fu-wu">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.heiye.dev/post/git-chang-yong-ming-ling-ji-shi-yong-xiang-jie">
-                        Git 常用命令及使用详解
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-23</time>
-                    
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                    <div class="post-content-abstract">
-                                        <figure data-type="image" tabindex="1"><img src="https://blog.heiye.dev/post-images/1563886342707.jpg" alt=""></figure>
+    
+
+    
+
+    
+        </header>
+
+		<div id="content" class="container">
+			<div class="row">
+	<div class="col-md-8 site-main">
+		
+ 						
+<article class="wow zoomIn post post-index  post-318 type-post status-publish format-standard hentry category-uncategorized tag-40 tag-39">
+	
+	 
+	   
+	<div class="entry-content">
+		<h1 class="entry-title"><a href="https://blog.heiye.dev/post/nestjs-ru-men-yi" rel="bookmark">Nestjs 入门（一）</a></h1>
+		<div class="entry-meta">
+		<i class="iconfont icon-rili"> <time class="lately-a" datetime="2019-10-07 20:28:58" itemprop="datePublished" pubdate="">2019-10-07</time></i>
+	 
+			
+		</div>
+
+		<div class="entry-summary jia">
+			<p><a href="https://nestjs.com/">Nestjs</a> 是 Node 渐进式框架，底层默认使用 express（可以通过 Adapter 转换到 fastify），可以使用 express 或者 fastify 所有中间件，完美支持 TypeScript。熟悉 Spring 和 Angular 的同学可以很快上手 Nestjs，它大量借鉴了 Spring 和 Angular 中的设计思想。</p>
+
+			<p class="readmore">
+				<a href="https://blog.heiye.dev/post/nestjs-ru-men-yi" class="link-more">Read more</a>
+			</p>
+		</div>
+		
+	</div>
+	
+</article>
+		
+ 						
+<article class="wow zoomIn post post-index  post-318 type-post status-publish format-standard hentry category-uncategorized tag-40 tag-39">
+	
+	 
+	   
+	<div class="entry-content">
+		<h1 class="entry-title"><a href="https://blog.heiye.dev/post/linux-tong-guo-sambaavahi-da-jian-time-machine-fu-wu" rel="bookmark">Linux 通过 Samba+Avahi 搭建 Time Machine 服务</a></h1>
+		<div class="entry-meta">
+		<i class="iconfont icon-rili"> <time class="lately-a" datetime="2019-08-17 23:36:23" itemprop="datePublished" pubdate="">2019-08-17</time></i>
+	 
+			
+		</div>
+
+		<div class="entry-summary jia">
+			
+			<p class="readmore">
+				<a href="https://blog.heiye.dev/post/linux-tong-guo-sambaavahi-da-jian-time-machine-fu-wu" class="link-more">Read more</a>
+			</p>
+		</div>
+		
+	</div>
+	
+</article>
+		
+ 						
+<article class="wow zoomIn post post-index  post-318 type-post status-publish format-standard hentry category-uncategorized tag-40 tag-39">
+	
+	 
+	   
+	<div class="entry-content">
+		<h1 class="entry-title"><a href="https://blog.heiye.dev/post/git-chang-yong-ming-ling-ji-shi-yong-xiang-jie" rel="bookmark">Git 常用命令及使用详解</a></h1>
+		<div class="entry-meta">
+		<i class="iconfont icon-rili"> <time class="lately-a" datetime="2019-07-23 20:51:03" itemprop="datePublished" pubdate="">2019-07-23</time></i>
+	 
+			
+		</div>
+
+		<div class="entry-summary jia">
+			<figure data-type="image" tabindex="1"><img src="https://blog.heiye.dev/post-images/1563886342707.jpg" alt=""></figure>
 <h1 id="0x00-写在前面">0x00 写在前面</h1>
 <p>现在大部分的开发团队都以 Git 作为自己的版本控制工具，需要对 Git 的使用非常的熟悉。这篇文章中本人整理了自己在开发过程中经常使用到的 Git 命令，方便在偶尔忘记时速查。使用 GUI 工具的同学，也可以对照起来看看。</p>
 
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://blog.heiye.dev/post/git-chang-yong-ming-ling-ji-shi-yong-xiang-jie">Read More ~</a>
-                            </div>
-                </div>
-            </article>
+			<p class="readmore">
+				<a href="https://blog.heiye.dev/post/git-chang-yong-ming-ling-ji-shi-yong-xiang-jie" class="link-more">Read more</a>
+			</p>
+		</div>
+		
+	</div>
+	
+</article>
+		
+ 						
+<article class="wow zoomIn post post-index  post-318 type-post status-publish format-standard hentry category-uncategorized tag-40 tag-39">
+	
+	 
+	   
+	<div class="entry-content">
+		<h1 class="entry-title"><a href="https://blog.heiye.dev/post/mac-xia-pipenv-wu-fa-an-zhuang-de-ban-fa" rel="bookmark">Mac 下 pipenv 无法安装 mysqlclient 的办法</a></h1>
+		<div class="entry-meta">
+		<i class="iconfont icon-rili"> <time class="lately-a" datetime="2019-07-17 22:38:42" itemprop="datePublished" pubdate="">2019-07-17</time></i>
+	 
+			
+		</div>
+
+		<div class="entry-summary jia">
+			
+			<p class="readmore">
+				<a href="https://blog.heiye.dev/post/mac-xia-pipenv-wu-fa-an-zhuang-de-ban-fa" class="link-more">Read more</a>
+			</p>
+		</div>
+		
+	</div>
+	
+</article>
+		
+ 						
+<article class="wow zoomIn post post-index  post-318 type-post status-publish format-standard hentry category-uncategorized tag-40 tag-39">
+	
+	 
+	   
+	<div class="entry-content">
+		<h1 class="entry-title"><a href="https://blog.heiye.dev/post/mac-osx-zhong-duan-zou-dai-li" rel="bookmark">Mac OSX 终端走代理 </a></h1>
+		<div class="entry-meta">
+		<i class="iconfont icon-rili"> <time class="lately-a" datetime="2019-07-17 22:19:02" itemprop="datePublished" pubdate="">2019-07-17</time></i>
+	 
+			
+		</div>
+
+		<div class="entry-summary jia">
+			<p>用此方法可以加速各种依赖安装的速度</p>
+
+			<p class="readmore">
+				<a href="https://blog.heiye.dev/post/mac-osx-zhong-duan-zou-dai-li" class="link-more">Read more</a>
+			</p>
+		</div>
+		
+	</div>
+	
+</article>
+		
+ 
+
+											   
+	</div>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.heiye.dev/post/mac-xia-pipenv-wu-fa-an-zhuang-de-ban-fa">
-                        Mac 下 pipenv 无法安装 mysqlclient 的办法
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-17</time>
-                    
-                        <a href="https://blog.heiye.dev/tag/macos" class="post-tag i-tag
-                            i-tag-warning">
-            #Mac OS
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            在开发 Django 的时候，运行  pipenv install mysqlclient 时，有如下报错：&#39;my_config.h&#39; file not found
-环境
+		
 
-macOS Mojave 10.14.2
-python 3.7.1
-pip 18.1
-mysqlclient 1.3.14
+			</div>
+														   
+			<nav class="navigation pagination" role="navigation">
+	
+			
+	</nav>	
+    	<script type="text/javascript">
+//点击加载更多
+jQuery(document).ready(function($) {
+    //点击下一页的链接(即那个a标签)
+    $(' .next').click(function() {
+        $this = $(this);
+        $this.addClass('loading').text('正在努力加载'); //给a标签加载一个loading的class属性，用来添加加载效果
+        var href = $this.attr('href'); //获取下一页的链接地址
+        if (href != undefined) { //如果地址存在
+            $.ajax({ //发起ajax请求
+                url: href,
+                //请求的地址就是下一页的链接
+                type: 'get',
+                //请求类型是get
+                error: function(request) {
+                    //如果发生错误怎么处理
+                },
+                success: function(data) { //请求成功
+                    $this.removeClass('loading').text('点击查看更多'); //移除loading属性
+                    var $res = $(data).find('.post-318 '); //从数据中挑出文章数据，请根据实际情况更改
+                    $('.col-md-8').append($res.fadeIn(500)); //将数据加载加进posts-loop的标签中。
+                    var newhref = $(data).find(' .next').attr('href'); //找出新的下一页链接
+                    if (newhref != undefined) {
+                        $('.next').attr('href', newhref);
+                    } else {
+                        $('.next').remove(); //如果没有下一页了，隐藏
+                    }
+                }
+            });
+        }
+        return false;
+    });
+});
+</script>
+									 
+		</div>
 
-解决方法：
-brew install mysql-connector-c　
-which mysql_config # /usr/local/bin/mysql_config
-chmod 777
-vim /usr/local/bin/mysql_config 
-# 查找 libs=&amp;quot;$libs -l&amp;quot; 改成 libs=&amp;quot;$libs -lmysqlclient -lssl -lcrypto&amp;quot;
+		
+	 	<footer id="colophon" class="site-footer">
 
+			<div class="container">
+	
+				<div class="copyright">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a><br>Theme:   <a href="https://github.com/alterfang/gridea-theme-pan" target="_blank" title="Pan"><span>Pan</span></a>. Powered by <a href="https://gridea.dev/" target="_blank" title="Gridea"><span>Gridea</span></a></div>		
+			</div>
+		
+		</footer>
 
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.heiye.dev/post/mac-xia-pipenv-wu-fa-an-zhuang-de-ban-fa">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.heiye.dev/post/mac-osx-zhong-duan-zou-dai-li">
-                        Mac OSX 终端走代理 
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-17</time>
-                    
-                        <a href="https://blog.heiye.dev/tag/macos" class="post-tag i-tag
-                            i-tag-other_3">
-            #Mac OS
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                    <div class="post-content-abstract">
-                                        <p>用此方法可以加速各种依赖安装的速度</p>
-
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://blog.heiye.dev/post/mac-osx-zhong-duan-zou-dai-li">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-                <!-- 翻页 -->
-                
-                </div>
-                <!--  -->
-                <div class="main-container-middle"></div>
-                <!--  -->
-                <div id="sidebar" class="main-container-right">
-
-                    <!-- 个人信息 -->
-                    
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.heiye.dev/images/avatar.png?v=1570539203379)">
-        </div>
-        <h1 class="id_card-title">
-            黑夜的博客
-        </h1>
-        <h2 class="id_card-description">
-            温故而知新
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                    <!-- twitter -->
-                    
-                            <!-- weibo -->
-                            
-                                    <!-- facebook -->
-                                    
-
-        </div>
-    </div>
-    
-
-                        <!-- 公告栏 -->
-                        
-
-                </div>
-            </div>
-
-
-
-            <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://blog.heiye.dev/atom.xml" target="_blank">RSS</a>
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
+<script src="https://cdn.bootcss.com/fitvids/1.2.0/jquery.fitvids.min.js"></script>
+<script type='text/javascript' src='https://blog.heiye.dev/media/scripts/marlin-scripts.js'></script>
+ <script src="//tokinx.github.io/lately/lately.min.js"></script>
+  <script>jQuery(document).ready(function(){$.lately({'target':'.lately-a,.lately-b,.lately-c'})});</script>
+  <style type="text/css">a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-propety: background-color;
+    display: none;
+}
+
+a.back_to_top span {
+    color: #888;
+}
+
+a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf;
+}
+
+a.back_to_top:hover span {
+    color: #555;
+}
+
+@media print, screen and (max-width: 580px) {
+    .back_to_top {
+        display: none !important;
+    }
+}
+
+
+
+</style><a id="back_to_top" href="#" class="back_to_top"><span><i class="iconfont icon-xiangshang"></i></span>
+</a>
+
+
+<script>$(document).ready((function(_this) {
+  return function() {
+    var bt;
+    bt = $('#back_to_top');
+    if ($(document).width() > 480) {
+      $(window).scroll(function() {
+        var st;
+        st = $(window).scrollTop();
+        if (st > 30) {
+          return bt.css('display', 'block');
+        } else {
+          return bt.css('display', 'none');
+        }
+      });
+      return bt.click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      });
+    }
+  };
+})(this));
 </script>
 
-    </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
+	
+	
+														   
 </body>
-
 </html>
