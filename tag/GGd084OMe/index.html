@@ -16,11 +16,19 @@ function getCSS()
         datetoday.setTime(timenow);
         thehour = datetoday.getHours();
 
+        if (thehour<18:00)
+
             display = "https://blog.heiye.dev/media/css/night.css";
 
+       else if (thehour>08:00)
+
             display = "https://blog.heiye.dev/media/css/night.css";   
-      
+
+        else if (thehour>18:00)
+           
             display = "https://blog.heiye.dev/media/css/day.css";
+
+        else if (thehour<08:00)
 
             display = "https://blog.heiye.dev/media/css/day.css";
       
