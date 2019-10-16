@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.heiye.dev</id>
     <title>黑夜的博客</title>
-    <updated>2019-10-08T14:19:23.060Z</updated>
+    <updated>2019-10-16T12:44:29.029Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.heiye.dev"/>
     <link rel="self" href="https://blog.heiye.dev/atom.xml"/>
@@ -10,6 +10,108 @@
     <logo>https://blog.heiye.dev/images/avatar.png</logo>
     <icon>https://blog.heiye.dev/favicon.ico</icon>
     <rights>All rights reserved 2019, 黑夜的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[Mac 安装 PostgreSQL]]></title>
+        <id>https://blog.heiye.dev/post/mac-an-zhuang-postgresql</id>
+        <link href="https://blog.heiye.dev/post/mac-an-zhuang-postgresql">
+        </link>
+        <updated>2019-10-16T12:34:05.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="安装及初始化">安装及初始化</h1>
+<p>这里使用 homebrew 安装</p>
+<pre><code>brew install postgresql
+</code></pre>
+<p>等待安装完成后，初始化：</p>
+<pre><code>initdb /usr/local/var/postgres
+
+</code></pre>
+<p>启动服务：</p>
+<pre><code>pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+
+</code></pre>
+<p>设置开机启动</p>
+<pre><code>ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+
+</code></pre>
+<h2 id="创建数据库和账户">创建数据库和账户</h2>
+<p>mac 安装 postgresql 后不会创建用户名数据库，执行命令：</p>
+<pre><code>createdb
+
+</code></pre>
+<p>然后登录 PostgreSQL 控制台：</p>
+<pre><code>psql
+</code></pre>
+<p>使用 <code>\l</code> 命令列出所有的数据库，看到已存在用户同名数据库、postgres 数据库，但是 postgres 数据库的所有者是当前用户，没有 postgres 用户。按 <code>:q</code> 退出查看</p>
+<p>之后需要做以下几件事：</p>
+<ol>
+<li>创建 postgres 用户</li>
+</ol>
+<pre><code> CREATE USER postgres WITH PASSWORD 'password';
+
+</code></pre>
+<ol start="2">
+<li>删除默认生成的 postgres 数据库</li>
+</ol>
+<pre><code> DROP DATABASE postgres;
+
+</code></pre>
+<ol start="3">
+<li>创建属于 postgres 用户的 postgres 数据库</li>
+</ol>
+<pre><code>  CREATE DATABASE postgres OWNER postgres;
+
+</code></pre>
+<ol start="4">
+<li>将数据库所有权限赋予 postgres 用户</li>
+</ol>
+<pre><code>   GRANT ALL PRIVILEGES ON DATABASE postgres to postgres;
+
+</code></pre>
+<ol start="5">
+<li>给 postgres 用户添加创建数据库的属性</li>
+</ol>
+<pre><code>    ALTER ROLE postgres CREATEDB;
+
+</code></pre>
+<p>这样就可以使用 postgres 作为数据库的登录用户了，并可以使用该用户管理数据库</p>
+<h1 id="登录控制台指令">登录控制台指令</h1>
+<pre><code>    psql -U [user] -d [database] -h [host] -p [post]
+
+</code></pre>
+<ul>
+<li>-U 指定用户，</li>
+<li>-d 指定数据库，</li>
+<li>-h 指定服务器，</li>
+<li>-p 指定端口</li>
+</ul>
+<p>上方直接使用<code>psql</code>登录控制台，实际上使用的是缺省数据</p>
+<pre><code>user：当前 mac 用户
+database：用户同名数据库
+主机：localhost
+端口号：5432，postgresql 的默认端口是 5432
+
+</code></pre>
+<p>完整的登录命令，比如使用 postgres 用户登录</p>
+<pre><code>psql -U postgres -d postgres
+</code></pre>
+<h1 id="常用控制台命令">常用控制台命令</h1>
+<pre><code>\password：设置当前登录用户的密码
+\h：查看SQL命令的解释，比如\h select。
+\?：查看psql命令列表。
+\l：列出所有数据库。
+\c [database_name]：连接其他数据库。
+\d：列出当前数据库的所有表格。
+\d [table_name]：列出某一张表格的结构。
+\du：列出所有用户。
+\e：打开文本编辑器。
+\conninfo：列出当前数据库和连接的信息。
+\password [user]: 修改用户密码
+\q：退出
+</code></pre>
+<blockquote></blockquote>
+<p>本文转载于 https://www.jianshu.com/p/10ced5145d39</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Nestjs 入门（一）]]></title>
         <id>https://blog.heiye.dev/post/nestjs-ru-men-yi</id>
