@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.heiye.dev</id>
     <title>黑夜的博客</title>
-    <updated>2019-11-15T07:54:49.689Z</updated>
+    <updated>2019-11-15T07:59:04.768Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.heiye.dev"/>
     <link rel="self" href="https://blog.heiye.dev/atom.xml"/>
@@ -27,31 +27,23 @@
 pipenv install rest-meets-djongo # api 支持
 
 </code></pre>
-<ol>
-<li>
-<p>配置 djongo</p>
+<p>2.配置 djongo</p>
 <pre><code>DATABASES ={
- 
+
     'default':{
         'ENGINE:'djongo',
         'NAME':'your-db-name',
-              }
-           }
+                }
+            }
 </code></pre>
-</li>
-<li>
-<p>Models</p>
-</li>
-</ol>
+<p>3.Models</p>
 <p>在 model 文件里面，我们需要配置 djongo 模型</p>
 <pre><code>from djongo import models
 
 class Article(models.Model):
 		......
 </code></pre>
-<ol start="4">
-<li>序列化</li>
-</ol>
+<p>4.序列化</p>
 <p>在 DRF 的 serializders.py  使用 DjongoModelSerializer。</p>
 <pre><code>from rest_meets_djongo.serializers import DjongoModelSerializer
 
@@ -62,7 +54,7 @@ class ArticleSerializer(DjongoModelSerializer):
         fields = &quot;__all__&quot;
 
 </code></pre>
-<p>##参考文献</p>
+<h2 id="参考文献">参考文献</h2>
 <p><strong>MongoDB</strong></p>
 <ul>
 <li>https://www.mongodb.com/</li>
