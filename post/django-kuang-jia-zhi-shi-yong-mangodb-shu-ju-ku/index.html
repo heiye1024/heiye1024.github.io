@@ -1,7 +1,7 @@
-
+<!DOCTYPE html>
 <html>
   <head lang="zh">
- <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
 <meta content="telephone=no" name="format-detection"/>
@@ -9,7 +9,7 @@
 <meta name="description" content="温故而知新">
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 
-<title>黑夜的博客</title>
+<title>Django 框架之 使用 MangoDB 数据库 | 黑夜的博客</title>
 <link href="https://blog.heiye.dev/styles/main.css" type="text/css" rel="stylesheet"/>
 <link rel="stylesheet" href="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.css"/>
 <script src="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.js"></script>
@@ -49,11 +49,10 @@ function pjax() {
 }
 </script>
 
-
   </head>
 
   <body>
-    <div class="header">
+     <div class="header">
       <div class="logo_title">
 		  
         <div class="title animated fadeInDown"><img id="img1" style="display:inline-block;" src="https://blog.heiye.dev/images/avatar.png"/>
@@ -238,36 +237,239 @@ var r = 0;
 }
 
 </style>
+
     <div class="main" id="pjax-container">
       <div class="main-inner">
 
 
 <div class="content">
-  <div class="list_with_title">
-
- <div class="tags-container">
-            <a class="tag" href="https://blog.heiye.dev/tag/BpUwTX9fW">Django</a>
-          
-            <a class="tag" href="https://blog.heiye.dev/tag/GGd084OMe">Nestjs</a>
-          
-            <a class="tag" href="https://blog.heiye.dev/tag/macos">Mac OS</a>
-          
- </div>
- 
 
 
 
 
+
+
+  <div class="post_page" >
+
+<div class="post">
+  <div class="post_title sm_margin">
+    <h2><a>Django 框架之 使用 MangoDB 数据库</a>
+
+
+
+    </h2>
   </div>
+  
+<script>
+function lan(){
+	if (document.getElementById("lan").innerText == "繁"){
+		var s=document.getElementById("tongwenlet_cn");
+		if(s != null){
+		document.body.removeChild(s);
+		}
+		var s = document.createElement("script");
+		s.language = "javascript";
+		s.type = "text/javascript";
+		s.src = "https://git.oschina.net/runningcheese/JiathisQR.js/raw/master/bookmarklet_tw.js";
+		s.id = "tongwenlet_cn";
+		document.body.appendChild(s);
+		document.getElementById("lan").innerHTML = "简"
+	}
+	else if(document.getElementById("lan").innerText == "簡"){
+		var s=document.getElementById("tongwenlet_cn");
+		if(s != null){
+		document.body.removeChild(s);
+		}
+		var s = document.createElement("script");
+		s.language = "javascript";
+		s.type = "text/javascript";
+		s.src = "https://git.oschina.net/runningcheese/JiathisQR.js/raw/master/bookmarklet_cn.js";
+		s.id = "tongwenlet_cn";
+		document.body.appendChild(s);
+		document.getElementById("lan").innerHTML = "繁"
+		}
+}
+
+function change(){	
+    var rand = Math.random()*1+1;
+    var num = window.getComputedStyle(document.getElementsByName("show")[0],undefined).fontSize;
+	num = num.slice(0,-2); 
+    document.getElementById("show").style.fontSize = num - rand +'px';
+}
+</script>
+
+  <div class="post_details">
+    <div class="info"><i class="fa fa-clock-o"></i>
+<span class="date_info">2019-11-15</span>
+<i class="fa fa-eye"></i>
+
+<span class="date_info"><span id="busuanzi_value_page_pv"></span> Views</span>
+
+<i class="fa fa-bookmark-o"></i>
+<span class="tags_info weaklink">
+	
+	<a href="https://blog.heiye.dev/tag/BpUwTX9fW" class="tag">Django</a>
+
+
+</span>
+<span>1 min read</span>
+&nbsp
+&nbsp
+<i class="fa fa-share"></i>
+<a title="QR code" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.heiye.dev/post/django-kuang-jia-zhi-shi-yong-mangodb-shu-ju-ku"><i class="fa fa-qrcode"></i></a>
+<a title="qq share" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.heiye.dev/post/django-kuang-jia-zhi-shi-yong-mangodb-shu-ju-ku&sharesource=qzone&title=Django 框架之 使用 MangoDB 数据库&pics=https://blog.blinkstar.cn/images/avatar.png&summary="><i class="fa fa-qq"></i></a>
+<a title="weibo share" target="_blank" href="https://service.weibo.com/share/share.php?url=https://blog.heiye.dev/post/django-kuang-jia-zhi-shi-yong-mangodb-shu-ju-ku&sharesource=weibo&title=Django 框架之 使用 MangoDB 数据库 + " - " + &pic="https://blog.blinkstar.cn/images/avatar.png"><i class="fa fa-weibo"></i></a>
+&nbsp
+&nbsp
+<a id="daxiao" href="javascript:void(0);" onclick="change();" title="调整字体大小"><i class="fa fa-font"></i></a>
+&nbsp
+&nbsp
+<a id="lan" href="javascript:void(0);" onclick="lan();" title="调整简繁体">繁</a>
+</div>
+  </div>
+
+  <div class="post_content markdown">
+  &nbsp
+  <img id="mememe" src="//source.unsplash.com/800x400/?arts,weather">
+    <div name="show" id="show">
+	<p class="md_block"><span class="md_line md_line_start md_line_end"><h1 id="django-框架之-使用-mangodb-数据库">Django 框架之 使用 MangoDB 数据库</h1>
+<h2 id="mongodb-简介">mongodb 简介</h2>
+<p>MongoDB 是基于文档 (Document) 的 NoSQL 数据库。文档是 MongoDB 中数据的基本单元，非常类似于关系数据库中的行(比行要复杂)。</p>
+<p>详情请看官网 https://www.mongodb.com/cn</p>
+<h2 id="django-集成-mongodb">Django 集成 Mongodb</h2>
+<p>在不更改 Django ORM 对情况下，使用 djongo 可以帮助项目跟更好的管理 Mongodb 。</p>
+<h3 id="安装与配置">安装与配置</h3>
+<p>1.安装</p>
+<pre><code>pipenv install djongo 
+pipenv install rest-meets-djongo # api 支持
+
+</code></pre>
+<ol start="2">
+<li>
+<p>配置 djongo</p>
+<pre><code>DATABASES ={
+ 
+    'default':{
+        'ENGINE:'djongo',
+        'NAME':'your-db-name',
+              }
+           }
+</code></pre>
+</li>
+<li>
+<p>Models</p>
+</li>
+</ol>
+<p>在 model 文件里面，我们需要配置 djongo 模型</p>
+<pre><code>from djongo import models
+
+class Article(models.Model):
+		......
+</code></pre>
+<ol start="4">
+<li>序列化</li>
+</ol>
+<p>在 DRF 的 serializders.py  使用 DjongoModelSerializer。</p>
+<pre><code>from rest_meets_djongo.serializers import DjongoModelSerializer
+
+
+class ArticleSerializer(DjongoModelSerializer):
+    class Meta:
+        model = Article
+        fields = &quot;__all__&quot;
+
+</code></pre>
+<p>##参考文献</p>
+<p><strong>MongoDB</strong></p>
+<ul>
+<li>https://www.mongodb.com/</li>
+</ul>
+<p><strong>rest-meets-djongo</strong></p>
+<ul>
+<li>https://github.com/SomeoneInParticular/rest_meets_djongo</li>
+</ul>
+<p><strong>djongo</strong></p>
+<ul>
+<li>https://github.com/nesdis/djon</li>
+</ul>
+</span></p></div>
+	<br>
+	<hr>
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-user"></i>本文由<a rel="license" href="/">黑夜的博客</a>创作</div>	
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-cc"></i>该文章采用<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。转载请注明出处！</div>
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-clock-o"></i>发布时间为：2019-11-15</div>    
+	 <p class="md_block">
+    <div class="reward"><div class="reward-button">赏 <span class="reward-code"> <span class="alipay-code"> <img class="alipay-img" src="https://blog.heiye.dev/media/images/alipay.png"><b>支付宝扫码打赏</b> </span> <span class="wechat-code"> <img class="wechat-img" src="https://blog.heiye.dev/media/images/wechat.png"><b>微信打赏</b> </span> </span></div></div>
+<div style="text-align:center;color: #ccc;font-size:14px;">如果觉得这篇文章对您有帮助，可以请作者喝一杯饮料哦🥤</div>    
+</p> 
+</div>
+</div>
+
+<style type="text/css">
+#mememe {
+	border:3px;
+	border-radius:5px;
+    background-repeat: no-repeat;
+    height: 100%;
+	width: 100%;
+	display: inline-block;
+	border-radius:5px; 
+}
+</style>
+
+<script>
+var link = "" ;
+$("img").each( (i,o) => {
+	var o = $(o);
+	if( o.attr("src").indexOf("sinaimg") > 0 || o.attr("src").indexOf("qpic") > 0 || o.attr("src").indexOf("baidu") > 0 || o.attr("src").indexOf("sinaimg") > 0){
+		o.attr("referrerpolicy","no-referrer");
+		link = o.attr("src");
+		o.attr("src",link);
+	}
+});
+</script>
+
+<div style="width:100%;overflow:hidden">
+
+          <div style="float:right;text-align:right;color:#ccc;font-size:18px;width:50%;">
+            下一篇
+            <a href="https://blog.heiye.dev/post/mac-an-zhuang-postgresql">
+              <h3 class="post-title">
+                Mac 安装 PostgreSQL
+              </h3>
+            </a>
+          </div>
+
+
 
 </div>
 
+<div class="doc_comments">
+
+</div>
+
+  </div>
+</div>
 
 
       </div>
+<div class="toc-container">
+<ul class="markdownIt-TOC">
+<li><a href="#django-%E6%A1%86%E6%9E%B6%E4%B9%8B-%E4%BD%BF%E7%94%A8-mangodb-%E6%95%B0%E6%8D%AE%E5%BA%93">Django 框架之 使用 MangoDB 数据库</a>
+<ul>
+<li><a href="#mongodb-%E7%AE%80%E4%BB%8B">mongodb 简介</a></li>
+<li><a href="#django-%E9%9B%86%E6%88%90-mongodb">Django 集成 Mongodb</a>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE">安装与配置</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
+</div>
     </div>
-
+	
    <div class="footer">
 <div class="site_footer_wrap"><div class="site_footer">
 
