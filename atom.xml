@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.heiye.dev</id>
     <title>黑夜的博客</title>
-    <updated>2019-11-15T07:54:02.967Z</updated>
+    <updated>2019-11-15T07:54:49.689Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.heiye.dev"/>
     <link rel="self" href="https://blog.heiye.dev/atom.xml"/>
@@ -16,8 +16,7 @@
         <link href="https://blog.heiye.dev/post/django-kuang-jia-zhi-shi-yong-mangodb-shu-ju-ku">
         </link>
         <updated>2019-11-15T07:51:04.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="django-框架之-使用-mangodb-数据库">Django 框架之 使用 MangoDB 数据库</h1>
-<h2 id="mongodb-简介">mongodb 简介</h2>
+        <content type="html"><![CDATA[<h2 id="mongodb-简介">mongodb 简介</h2>
 <p>MongoDB 是基于文档 (Document) 的 NoSQL 数据库。文档是 MongoDB 中数据的基本单元，非常类似于关系数据库中的行(比行要复杂)。</p>
 <p>详情请看官网 https://www.mongodb.com/cn</p>
 <h2 id="django-集成-mongodb">Django 集成 Mongodb</h2>
@@ -28,7 +27,7 @@
 pipenv install rest-meets-djongo # api 支持
 
 </code></pre>
-<ol start="2">
+<ol>
 <li>
 <p>配置 djongo</p>
 <pre><code>DATABASES ={
