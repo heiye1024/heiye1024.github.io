@@ -312,7 +312,7 @@ function change(){
 
 
 </span>
-<span>1 min read</span>
+<span>6 min read</span>
 &nbsp
 &nbsp
 <i class="fa fa-share"></i>
@@ -332,7 +332,8 @@ function change(){
   &nbsp
   <img id="mememe" src="//source.unsplash.com/800x400/?arts,weather">
     <div name="show" id="show">
-	<p class="md_block"><span class="md_line md_line_start md_line_end"><p>在开发 Django 的时候，运行  pipenv install mysqlclient 时，有如下报错：<code>'my_config.h' file not found</code></p>
+	<p class="md_block"><span class="md_line md_line_start md_line_end"><h2 id="问题一">问题一</h2>
+<p>在开发 Django 的时候，运行  pipenv install mysqlclient 时，有如下报错：<code>'my_config.h' file not found</code></p>
 <h1 id="环境">环境</h1>
 <ul>
 <li>macOS Mojave 10.14.2</li>
@@ -346,6 +347,87 @@ which mysql_config # /usr/local/bin/mysql_config
 chmod 777
 vim /usr/local/bin/mysql_config 
 # 查找 libs=&quot;$libs -l&quot; 改成 libs=&quot;$libs -lmysqlclient -lssl -lcrypto&quot;
+</code></pre>
+<h2 id="问题二">问题二</h2>
+<p>缺少 openssl 引起的安装失败</p>
+<pre><code>pip3 install mysqlclient
+Collecting mysqlclient
+  Downloading https://files.pythonhosted.org/packages/de/d7/919042fb7ed78a89e21c4e43d5daed90d5df18ec183bae3de493a7d9e3ed/mysqlclient-1.4.1.tar.gz (85kB)
+    100% |████████████████████████████████| 92kB 33kB/s 
+Installing collected packages: mysqlclient
+  Running setup.py install for mysqlclient ... error
+    Complete output from command /Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7 -u -c &quot;import setuptools, tokenize;__file__='/private/tmp/pip-install-27wftw10/mysqlclient/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))&quot; install --record /private/tmp/pip-record-678j2sqk/install-record.txt --single-version-externally-managed --compile:
+    running install
+    running build
+    running build_py
+    creating build
+    creating build/lib.macosx-10.9-x86_64-3.7
+    creating build/lib.macosx-10.9-x86_64-3.7/MySQLdb
+    copying MySQLdb/__init__.py -&gt; build/lib.macosx-10.9-x86_64-3.7/MySQLdb
+    copying MySQLdb/_exceptions.py -&gt; build/lib.macosx-10.9-x86_64-3.7/MySQLdb
+    copying MySQLdb/compat.py -&gt; build/lib.macosx-10.9-x86_64-3.7/MySQLdb
+    copying MySQLdb/connections.py -&gt; build/lib.macosx-10.9-x86_64-3.7/MySQLdb
+    copying MySQLdb/converters.py -&gt; build/lib.macosx-10.9-x86_64-3.7/MySQLdb
+    copying MySQLdb/cursors.py -&gt; build/lib.macosx-10.9-x86_64-3.7/MySQLdb
+    copying MySQLdb/release.py -&gt; build/lib.macosx-10.9-x86_64-3.7/MySQLdb
+    copying MySQLdb/times.py -&gt; build/lib.macosx-10.9-x86_64-3.7/MySQLdb
+    creating build/lib.macosx-10.9-x86_64-3.7/MySQLdb/constants
+    copying MySQLdb/constants/__init__.py -&gt; build/lib.macosx-10.9-x86_64-3.7/MySQLdb/constants
+    copying MySQLdb/constants/CLIENT.py -&gt; build/lib.macosx-10.9-x86_64-3.7/MySQLdb/constants
+    copying MySQLdb/constants/CR.py -&gt; build/lib.macosx-10.9-x86_64-3.7/MySQLdb/constants
+    copying MySQLdb/constants/ER.py -&gt; build/lib.macosx-10.9-x86_64-3.7/MySQLdb/constants
+    copying MySQLdb/constants/FIELD_TYPE.py -&gt; build/lib.macosx-10.9-x86_64-3.7/MySQLdb/constants
+    copying MySQLdb/constants/FLAG.py -&gt; build/lib.macosx-10.9-x86_64-3.7/MySQLdb/constants
+    running build_ext
+    building 'MySQLdb._mysql' extension
+    creating build/temp.macosx-10.9-x86_64-3.7
+    creating build/temp.macosx-10.9-x86_64-3.7/MySQLdb
+    gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -fwrapv -O3 -Wall -arch x86_64 -g -Dversion_info=(1,4,1,'final',0) -D__version__=1.4.1 -I/usr/local/homebrew/Cellar/mysql/8.0.12/include/mysql -I/Library/Frameworks/Python.framework/Versions/3.7/include/python3.7m -c MySQLdb/_mysql.c -o build/temp.macosx-10.9-x86_64-3.7/MySQLdb/_mysql.o
+    gcc -bundle -undefined dynamic_lookup -arch x86_64 -g build/temp.macosx-10.9-x86_64-3.7/MySQLdb/_mysql.o -L/usr/local/homebrew/Cellar/mysql/8.0.12/lib -lmysqlclient -lssl -lcrypto -o build/lib.macosx-10.9-x86_64-3.7/MySQLdb/_mysql.cpython-37m-darwin.so
+    ld: library not found for -lssl
+    clang: error: linker command failed with exit code 1 (use -v to see invocation)
+    error: command 'gcc' failed with exit status 1
+    
+    ----------------------------------------
+Command &quot;/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7 -u -c &quot;import setuptools, tokenize;__file__='/private/tmp/pip-install-27wftw10/mysqlclient/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))&quot; install --record /private/tmp/pip-record-678j2sqk/install-record.txt --single-version-externally-managed --compile&quot; failed with error code 1 in /private/tmp/pip-install-27wftw10/mysqlclient/
+You are using pip version 18.1, however version 19.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+</code></pre>
+<h3 id="查找-gcc-库文件和连接文件">查找 gcc 库文件和连接文件</h3>
+<pre><code>$ brew info openssl
+openssl@1.1: stable 1.1.1d (bottled) [keg-only]
+Cryptography and SSL/TLS Toolkit
+https://openssl.org/
+/usr/local/Cellar/openssl@1.1/1.1.1d (7,983 files, 17.9MB)
+  Poured from bottle on 2019-11-29 at 14:11:35
+From: https://github.com/Homebrew/homebrew-core/blob/master/Formula/openssl@1.1.rb
+==&gt; Caveats
+A CA file has been bootstrapped using certificates from the system
+keychain. To add additional certificates, place .pem files in
+  /usr/local/etc/openssl@1.1/certs
+
+and run
+  /usr/local/opt/openssl@1.1/bin/c_rehash
+
+openssl@1.1 is keg-only, which means it was not symlinked into /usr/local,
+because openssl/libressl is provided by macOS so don't link an incompatible version.
+
+If you need to have openssl@1.1 first in your PATH run:
+  echo 'export PATH=&quot;/usr/local/opt/openssl@1.1/bin:$PATH&quot;' &gt;&gt; ~/.zshrc
+
+For compilers to find openssl@1.1 you may need to set:  
+  export LDFLAGS=&quot;-L/usr/local/opt/openssl@1.1/lib&quot;
+  export CPPFLAGS=&quot;-I/usr/local/opt/openssl@1.1/include&quot;
+
+==&gt; Analytics
+install: 509,829 (30 days), 1,819,556 (90 days), 2,319,040 (365 days)
+install-on-request: 46,241 (30 days), 142,039 (90 days), 416,500 (365 days)
+build-error: 0 (30 days)
+
+</code></pre>
+<p>输入一下命令解决问题</p>
+<pre><code>  export LDFLAGS=&quot;-L/usr/local/opt/openssl@1.1/lib&quot;
+  export CPPFLAGS=&quot;-I/usr/local/opt/openssl@1.1/include&quot;
 </code></pre>
 </span></p></div>
 	<br>
@@ -419,8 +501,21 @@ $("img").each( (i,o) => {
       </div>
 <div class="toc-container">
 <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E9%97%AE%E9%A2%98%E4%B8%80">问题一</a></li>
+</ul>
+</li>
 <li><a href="#%E7%8E%AF%E5%A2%83">环境</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95">解决方法：</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95">解决方法：</a>
+<ul>
+<li><a href="#%E9%97%AE%E9%A2%98%E4%BA%8C">问题二</a>
+<ul>
+<li><a href="#%E6%9F%A5%E6%89%BE-gcc-%E5%BA%93%E6%96%87%E4%BB%B6%E5%92%8C%E8%BF%9E%E6%8E%A5%E6%96%87%E4%BB%B6">查找 gcc 库文件和连接文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 </div>
