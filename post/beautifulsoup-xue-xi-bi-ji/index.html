@@ -1,7 +1,7 @@
-
+<!DOCTYPE html>
 <html>
   <head lang="zh">
-   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
 <meta content="telephone=no" name="format-detection"/>
@@ -9,7 +9,7 @@
 <meta name="description" content="温故而知新">
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 
-<title>黑夜的博客</title>
+<title>BeautifulSoup 学习笔记 | 黑夜的博客</title>
 <link href="https://blog.heiye.dev/styles/main.css" type="text/css" rel="stylesheet"/>
 <link rel="stylesheet" href="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.css"/>
 <script src="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.js"></script>
@@ -52,7 +52,7 @@ function pjax() {
   </head>
 
   <body>
-    <div class="header">
+     <div class="header">
       <div class="logo_title">
 		  
         <div class="title animated fadeInDown"><img id="img1" style="display:inline-block;" src="https://blog.heiye.dev/images/avatar.png"/>
@@ -238,168 +238,214 @@ var r = 0;
 
 </style>
 
-
     <div class="main" id="pjax-container">
       <div class="main-inner">
 
 
 <div class="content">
+
+
+
+
+
+
+  <div class="post_page" >
+
+<div class="post">
+  <div class="post_title sm_margin">
+    <h2><a>BeautifulSoup 学习笔记</a>
+
+
+
+    </h2>
+  </div>
+  
+<script>
+function lan(){
+	if (document.getElementById("lan").innerText == "繁"){
+		var s=document.getElementById("tongwenlet_cn");
+		if(s != null){
+		document.body.removeChild(s);
+		}
+		var s = document.createElement("script");
+		s.language = "javascript";
+		s.type = "text/javascript";
+		s.src = "https://git.oschina.net/runningcheese/JiathisQR.js/raw/master/bookmarklet_tw.js";
+		s.id = "tongwenlet_cn";
+		document.body.appendChild(s);
+		document.getElementById("lan").innerHTML = "简"
+	}
+	else if(document.getElementById("lan").innerText == "簡"){
+		var s=document.getElementById("tongwenlet_cn");
+		if(s != null){
+		document.body.removeChild(s);
+		}
+		var s = document.createElement("script");
+		s.language = "javascript";
+		s.type = "text/javascript";
+		s.src = "https://git.oschina.net/runningcheese/JiathisQR.js/raw/master/bookmarklet_cn.js";
+		s.id = "tongwenlet_cn";
+		document.body.appendChild(s);
+		document.getElementById("lan").innerHTML = "繁"
+		}
+}
+
+function change(){	
+    var rand = Math.random()*1+1;
+    var num = window.getComputedStyle(document.getElementsByName("show")[0],undefined).fontSize;
+	num = num.slice(0,-2); 
+    document.getElementById("show").style.fontSize = num - rand +'px';
+}
+</script>
+
+  <div class="post_details">
+    <div class="info"><i class="fa fa-clock-o"></i>
+<span class="date_info">2020-02-20</span>
+<i class="fa fa-eye"></i>
+
+<span class="date_info"><span id="busuanzi_value_page_pv"></span> Views</span>
+
+<i class="fa fa-bookmark-o"></i>
+<span class="tags_info weaklink">
 	
-	
-  <div class="list_with_title">
 
-    <div class="listing_title">2020</div>
-
-	  
-    <div class="listing">
-      <div class="listing-item">
-		  
-                                
-        <div class="listing_post"><a href="https://blog.heiye.dev/post/beautifulsoup-xue-xi-bi-ji" title="BeautifulSoup 学习笔记" >BeautifulSoup 学习笔记</a>
-
-          <div class="post_date"><span class="date">2020-02-20</span>
-
-          </div>
-
-        </div>
- 
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-      </div>
-
-
-		
-		
-		
-    </div>
-
-
+</span>
+<span>2 min read</span>
+&nbsp
+&nbsp
+<i class="fa fa-share"></i>
+<a title="QR code" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.heiye.dev/post/beautifulsoup-xue-xi-bi-ji"><i class="fa fa-qrcode"></i></a>
+<a title="qq share" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.heiye.dev/post/beautifulsoup-xue-xi-bi-ji&sharesource=qzone&title=BeautifulSoup 学习笔记&pics=https://blog.blinkstar.cn/images/avatar.png&summary="><i class="fa fa-qq"></i></a>
+<a title="weibo share" target="_blank" href="https://service.weibo.com/share/share.php?url=https://blog.heiye.dev/post/beautifulsoup-xue-xi-bi-ji&sharesource=weibo&title=BeautifulSoup 学习笔记 + " - " + &pic="https://blog.blinkstar.cn/images/avatar.png"><i class="fa fa-weibo"></i></a>
+&nbsp
+&nbsp
+<a id="daxiao" href="javascript:void(0);" onclick="change();" title="调整字体大小"><i class="fa fa-font"></i></a>
+&nbsp
+&nbsp
+<a id="lan" href="javascript:void(0);" onclick="lan();" title="调整简繁体">繁</a>
+</div>
   </div>
 
-  <div class="list_with_title">
+  <div class="post_content markdown">
+  &nbsp
+  <img id="mememe" src="//source.unsplash.com/800x400/?arts,weather">
+    <div name="show" id="show">
+	<p class="md_block"><span class="md_line md_line_start md_line_end"><h1 id="beautifulsoup-库">BeautifulSoup 库</h1>
+<p>BeautifulSoup可以轻松的解析Requests库请求的页面，并把页面源代码解析为Soup文档，一边过滤提取数据。</p>
+<h2 id="选择器select">选择器select</h2>
+<pre><code># 选择所有div标签
+soup.select(&quot;div&quot;)
+# 选择所有p标签中的第三个标签
+soup.select(&quot;p:nth-of-type(3)&quot;)
+相当于soup.select(p)[2]
+# 选择div标签下的所有img标签
+soup.select(&quot;div img&quot;)
+# 选择div标签下的直接a子标签
+soup.select(&quot;div &gt; a&quot;)
+# 选择id=link1后的所有兄弟节点标签
+soup.select(&quot;#link1 ~ .mybro&quot;)
+# 选择id=link1后的下一个兄弟节点标签
+soup.select(&quot;#link1 + .mybro&quot;)
+# 选择a标签，其类属性为className的标签
+soup.select(&quot;a .className&quot;)
+# 选择a标签，其id属性为idName的标签
+soup.select(&quot;a #idName&quot;)
+# 选择a标签，其属性中存在attrName的所有标签
+soup.select(&quot;a[attrName]&quot;)
+# 选择a标签，其属性href=http://wangyanling.com的所有标签
+soup.select(&quot;a[href='http://wangyanling.com']&quot;)
+# 选择a标签，其href属性以http开头
+soup.select('a[href^=&quot;http&quot;]')
+# 选择a标签，其href属性以lacie结尾
+soup.select('a[href$=&quot;lacie&quot;]')
+# 选择a标签，其href属性包含.com
+soup.select('a[href*=&quot;.com&quot;]')
+# 从html中排除某标签，此时soup中不再有script标签
+[s.extract() for s in soup('script')]
+# 如果想排除多个呢
+[s.extract() for s in soup(['script','fram']
+</code></pre>
+<h1 id="设置-header">设置 header</h1>
+<pre><code>import requests
+from bs4 import BeautifulSoup
+header={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'}
 
-    <div class="listing_title">2019</div>
+</code></pre>
+</span></p></div>
+	<br>
+	<hr>
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-user"></i>本文由<a rel="license" href="/">黑夜的博客</a>创作</div>	
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-cc"></i>该文章采用<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。转载请注明出处！</div>
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-clock-o"></i>发布时间为：2020-02-20</div>    
+	 <p class="md_block">
+    <div class="reward"><div class="reward-button">赏 <span class="reward-code"> <span class="alipay-code"> <img class="alipay-img" src="https://blog.heiye.dev/media/images/alipay.png"><b>支付宝扫码打赏</b> </span> <span class="wechat-code"> <img class="wechat-img" src="https://blog.heiye.dev/media/images/wechat.png"><b>微信打赏</b> </span> </span></div></div>
+<div style="text-align:center;color: #ccc;font-size:14px;">如果觉得这篇文章对您有帮助，可以请作者喝一杯饮料哦🥤</div>    
+</p> 
+</div>
+</div>
 
-	  
-    <div class="listing">
-      <div class="listing-item">
-		  
-                                
-                            
-                                
-        <div class="listing_post"><a href="https://blog.heiye.dev/post/pve-60-an-zhuang-cockpit-bi-ji" title="PVE 6.0 安装 cockpit (笔记)" >PVE 6.0 安装 cockpit (笔记)</a>
+<style type="text/css">
+#mememe {
+	border:3px;
+	border-radius:5px;
+    background-repeat: no-repeat;
+    height: 100%;
+	width: 100%;
+	display: inline-block;
+	border-radius:5px; 
+}
+</style>
 
-          <div class="post_date"><span class="date">2019-12-09</span>
+<script>
+var link = "" ;
+$("img").each( (i,o) => {
+	var o = $(o);
+	if( o.attr("src").indexOf("sinaimg") > 0 || o.attr("src").indexOf("qpic") > 0 || o.attr("src").indexOf("baidu") > 0 || o.attr("src").indexOf("sinaimg") > 0){
+		o.attr("referrerpolicy","no-referrer");
+		link = o.attr("src");
+		o.attr("src",link);
+	}
+});
+</script>
 
+<div style="width:100%;overflow:hidden">
+
+          <div style="float:right;text-align:right;color:#ccc;font-size:18px;width:50%;">
+            下一篇
+            <a href="https://blog.heiye.dev/post/pve-60-an-zhuang-cockpit-bi-ji">
+              <h3 class="post-title">
+                PVE 6.0 安装 cockpit (笔记)
+              </h3>
+            </a>
           </div>
 
-        </div>
- 
-                            
-                                
-        <div class="listing_post"><a href="https://blog.heiye.dev/post/django-kuang-jia-zhi-shi-yong-mangodb-shu-ju-ku" title="Django 框架之使用 MangoDB 数据库" >Django 框架之使用 MangoDB 数据库</a>
 
-          <div class="post_date"><span class="date">2019-11-15</span>
-
-          </div>
-
-        </div>
- 
-                            
-                                
-        <div class="listing_post"><a href="https://blog.heiye.dev/post/mac-an-zhuang-postgresql" title="Mac 安装 PostgreSQL" >Mac 安装 PostgreSQL</a>
-
-          <div class="post_date"><span class="date">2019-10-16</span>
-
-          </div>
-
-        </div>
- 
-                            
-                                
-        <div class="listing_post"><a href="https://blog.heiye.dev/post/nestjs-ru-men-yi" title="Nestjs 入门（一）" >Nestjs 入门（一）</a>
-
-          <div class="post_date"><span class="date">2019-10-07</span>
-
-          </div>
-
-        </div>
- 
-                            
-                                
-        <div class="listing_post"><a href="https://blog.heiye.dev/post/linux-tong-guo-sambaavahi-da-jian-time-machine-fu-wu" title="Linux 通过 Samba+Avahi 搭建 Time Machine 服务" >Linux 通过 Samba+Avahi 搭建 Time Machine 服务</a>
-
-          <div class="post_date"><span class="date">2019-08-17</span>
-
-          </div>
-
-        </div>
- 
-                            
-                                
-        <div class="listing_post"><a href="https://blog.heiye.dev/post/git-chang-yong-ming-ling-ji-shi-yong-xiang-jie" title="Git 常用命令及使用详解" >Git 常用命令及使用详解</a>
-
-          <div class="post_date"><span class="date">2019-07-23</span>
-
-          </div>
-
-        </div>
- 
-                            
-                                
-        <div class="listing_post"><a href="https://blog.heiye.dev/post/mac-xia-pipenv-wu-fa-an-zhuang-de-ban-fa" title="Mac 下 pipenv 无法安装 mysqlclient 的办法" >Mac 下 pipenv 无法安装 mysqlclient 的办法</a>
-
-          <div class="post_date"><span class="date">2019-07-17</span>
-
-          </div>
-
-        </div>
- 
-                            
-                                
-        <div class="listing_post"><a href="https://blog.heiye.dev/post/mac-osx-zhong-duan-zou-dai-li" title="Mac OSX 终端走代理 " >Mac OSX 终端走代理 </a>
-
-          <div class="post_date"><span class="date">2019-07-17</span>
-
-          </div>
-
-        </div>
- 
-                            
-      </div>
-
-
-		
-		
-		
-    </div>
-
-
-  </div>
 
 </div>
 
+<div class="doc_comments">
+
+</div>
+
+  </div>
+</div>
 
 
       </div>
+<div class="toc-container">
+<ul class="markdownIt-TOC">
+<li><a href="#beautifulsoup-%E5%BA%93">BeautifulSoup 库</a>
+<ul>
+<li><a href="#%E9%80%89%E6%8B%A9%E5%99%A8select">选择器select</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AE%BE%E7%BD%AE-header">设置 header</a></li>
+</ul>
 
+</div>
     </div>
-    <div class="footer">
+	
+   <div class="footer">
 <div class="site_footer_wrap"><div class="site_footer">
 
       <div class="mysocials"><div class="my_socials">

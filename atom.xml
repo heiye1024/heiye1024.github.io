@@ -2,14 +2,80 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.heiye.dev</id>
     <title>黑夜的博客</title>
-    <updated>2019-11-29T09:59:05.453Z</updated>
+    <updated>2020-02-20T08:13:23.218Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.heiye.dev"/>
     <link rel="self" href="https://blog.heiye.dev/atom.xml"/>
     <subtitle>温故而知新</subtitle>
     <logo>https://blog.heiye.dev/images/avatar.png</logo>
     <icon>https://blog.heiye.dev/favicon.ico</icon>
-    <rights>All rights reserved 2019, 黑夜的博客</rights>
+    <rights>All rights reserved 2020, 黑夜的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[BeautifulSoup 学习笔记]]></title>
+        <id>https://blog.heiye.dev/post/beautifulsoup-xue-xi-bi-ji</id>
+        <link href="https://blog.heiye.dev/post/beautifulsoup-xue-xi-bi-ji">
+        </link>
+        <updated>2020-02-20T08:10:39.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="beautifulsoup-库">BeautifulSoup 库</h1>
+<p>BeautifulSoup可以轻松的解析Requests库请求的页面，并把页面源代码解析为Soup文档，一边过滤提取数据。</p>
+<h2 id="选择器select">选择器select</h2>
+<pre><code># 选择所有div标签
+soup.select(&quot;div&quot;)
+# 选择所有p标签中的第三个标签
+soup.select(&quot;p:nth-of-type(3)&quot;)
+相当于soup.select(p)[2]
+# 选择div标签下的所有img标签
+soup.select(&quot;div img&quot;)
+# 选择div标签下的直接a子标签
+soup.select(&quot;div &gt; a&quot;)
+# 选择id=link1后的所有兄弟节点标签
+soup.select(&quot;#link1 ~ .mybro&quot;)
+# 选择id=link1后的下一个兄弟节点标签
+soup.select(&quot;#link1 + .mybro&quot;)
+# 选择a标签，其类属性为className的标签
+soup.select(&quot;a .className&quot;)
+# 选择a标签，其id属性为idName的标签
+soup.select(&quot;a #idName&quot;)
+# 选择a标签，其属性中存在attrName的所有标签
+soup.select(&quot;a[attrName]&quot;)
+# 选择a标签，其属性href=http://wangyanling.com的所有标签
+soup.select(&quot;a[href='http://wangyanling.com']&quot;)
+# 选择a标签，其href属性以http开头
+soup.select('a[href^=&quot;http&quot;]')
+# 选择a标签，其href属性以lacie结尾
+soup.select('a[href$=&quot;lacie&quot;]')
+# 选择a标签，其href属性包含.com
+soup.select('a[href*=&quot;.com&quot;]')
+# 从html中排除某标签，此时soup中不再有script标签
+[s.extract() for s in soup('script')]
+# 如果想排除多个呢
+[s.extract() for s in soup(['script','fram']
+</code></pre>
+<h1 id="设置-header">设置 header</h1>
+<pre><code>import requests
+from bs4 import BeautifulSoup
+header={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'}
+
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PVE 6.0 安装 cockpit (笔记)]]></title>
+        <id>https://blog.heiye.dev/post/pve-60-an-zhuang-cockpit-bi-ji</id>
+        <link href="https://blog.heiye.dev/post/pve-60-an-zhuang-cockpit-bi-ji">
+        </link>
+        <updated>2019-12-09T13:36:37.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="添加-apt-源">添加 apt 源</h2>
+<pre><code>echo &quot;deb http://deb.debian.org/debian buster-backports main&quot; &gt; /etc/apt/sources.list.d/buster-backport.list
+
+apt update
+
+</code></pre>
+<h2 id="安装-cockpit">安装 cockpit</h2>
+<pre><code>apt-get -t buster-backports install cockpit
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Django 框架之使用 MangoDB 数据库]]></title>
         <id>https://blog.heiye.dev/post/django-kuang-jia-zhi-shi-yong-mangodb-shu-ju-ku</id>
